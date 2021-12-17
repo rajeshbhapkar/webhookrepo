@@ -11,12 +11,13 @@ pipeline {
                       echo "INFO: Docker image built"
                }     
            }
+       } 
         stage("Deploy")
             steps
             {
                 script {
                        echo "INFO: RUNNING new docker image"
-                       sh "docker rm -f index.php demo || true"
+                       sh "docker rm -f index.php-demo || true"
                        sh "docker run --restart always -p 7272:7272 -d --name index.php-demo-container index.php-demo:latest"
                        echo "INFO: Deployed"
                 }
