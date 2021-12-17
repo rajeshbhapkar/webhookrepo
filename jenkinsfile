@@ -6,8 +6,8 @@ pipeline {
            steps
            {  
                script {
-                      echo "INFO: Building docker image"
-                      sh "docker build -t index.php-demo:latest"
+                      echo "INFO: Building Docker image"
+                      sh "docker build -t index.php-demo:latest ."
                       echo "INFO: Docker image built"
                }     
            }
